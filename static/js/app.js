@@ -31,9 +31,13 @@ function runEnter(){
 // code from class lesson 3.3
     const tbody = d3.select("tbody");
 
-    dataFilter.forEach(function(ufoInfo){
-    console.log(ufoInfo);
-    let row = tbody.append("td");
+        dataFilter.forEach(function(ufoInfo){
+           let row = tbody.append("tr");
+           Object.entries(ufoInfo).forEach(function([key,value]){
+            console.log(key, value);
+            let cell = row.append("td");
+            cell.text(value);
+           })
     });
 
 };
